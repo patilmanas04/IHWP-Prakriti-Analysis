@@ -390,11 +390,11 @@ export default function Index() {
 
     const getCategoryColor = (category: string) => {
       switch (category) {
-        case "physical": return "from-rose-100 to-pink-100 border-rose-200";
-        case "mental": return "from-blue-100 to-indigo-100 border-blue-200";
-        case "habits": return "from-purple-100 to-violet-100 border-purple-200";
-        case "environment": return "from-green-100 to-emerald-100 border-green-200";
-        default: return "from-amber-100 to-orange-100 border-amber-200";
+        case "physical": return "from-blue-100 to-sky-100 border-blue-200";
+        case "mental": return "from-indigo-100 to-purple-100 border-indigo-200";
+        case "habits": return "from-cyan-100 to-blue-100 border-cyan-200";
+        case "environment": return "from-slate-100 to-blue-100 border-slate-200";
+        default: return "from-blue-100 to-indigo-100 border-blue-200";
       }
     };
 
