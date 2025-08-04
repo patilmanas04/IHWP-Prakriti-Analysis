@@ -488,9 +488,9 @@ export default function Index() {
                                 <Badge
                                   variant="outline"
                                   className={`text-xs ${
-                                    answer.dosha === 'vata' ? 'text-blue-600 border-blue-200' :
-                                    answer.dosha === 'pitta' ? 'text-red-600 border-red-200' :
-                                    'text-green-600 border-green-200'
+                                    answer.dosha === 'vata' ? 'text-sky-600 border-sky-200' :
+                                    answer.dosha === 'pitta' ? 'text-indigo-600 border-indigo-200' :
+                                    'text-teal-600 border-teal-200'
                                   }`}
                                 >
                                   {answer.dosha}
