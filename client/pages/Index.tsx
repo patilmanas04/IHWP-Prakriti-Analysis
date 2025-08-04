@@ -285,13 +285,13 @@ export default function Index() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card className="border-blue-200 hover:border-blue-300 transition-colors">
+              <Card className="border-sky-200 hover:border-sky-300 transition-colors bg-gradient-to-br from-sky-50 to-blue-50">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-blue-100 rounded-lg">
-                      <Droplets className="w-6 h-6 text-blue-600" />
+                    <div className="p-2 bg-sky-100 rounded-lg">
+                      <Droplets className="w-6 h-6 text-sky-600" />
                     </div>
-                    <CardTitle className="text-blue-600">Vata</CardTitle>
+                    <CardTitle className="text-sky-600">Vata</CardTitle>
                   </div>
                   <CardDescription>Air & Space</CardDescription>
                 </CardHeader>
