@@ -143,8 +143,8 @@ const doshaInfo = {
     element: "Air & Space",
     qualities: "Movement, Creativity, Flexibility",
     icon: <Droplets className="w-6 h-6" />,
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
+    color: "text-sky-600",
+    bgColor: "bg-gradient-to-br from-sky-50 to-blue-100",
     description: "Vata governs movement and is associated with creativity, flexibility, and quick thinking.",
     tips: [
       "Maintain regular routines and meal times",
@@ -159,8 +159,8 @@ const doshaInfo = {
     element: "Fire & Water",
     qualities: "Transformation, Intelligence, Passion",
     icon: <Sun className="w-6 h-6" />,
-    color: "text-red-600",
-    bgColor: "bg-red-50",
+    color: "text-indigo-600",
+    bgColor: "bg-gradient-to-br from-indigo-50 to-purple-100",
     description: "Pitta governs transformation and is associated with intelligence, passion, and strong digestion.",
     tips: [
       "Keep cool and avoid excessive heat",
@@ -175,8 +175,8 @@ const doshaInfo = {
     element: "Earth & Water",
     qualities: "Structure, Stability, Compassion",
     icon: <Leaf className="w-6 h-6" />,
-    color: "text-green-600",
-    bgColor: "bg-green-50",
+    color: "text-teal-600",
+    bgColor: "bg-gradient-to-br from-teal-50 to-cyan-100",
     description: "Kapha governs structure and is associated with stability, compassion, and strong immunity.",
     tips: [
       "Stay active and engage in regular exercise",
