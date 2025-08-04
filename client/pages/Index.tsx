@@ -378,60 +378,185 @@ export default function Index() {
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
     const selectedAnswer = answers[currentQuestion.id];
 
+    const getCategoryIcon = (category: string) => {
+      switch (category) {
+        case "physical": return <Heart className="w-5 h-5" />;
+        case "mental": return <Brain className="w-5 h-5" />;
+        case "habits": return <Moon className="w-5 h-5" />;
+        case "environment": return <Sun className="w-5 h-5" />;
+        default: return <Leaf className="w-5 h-5" />;
+      }
+    };
+
+    const getCategoryColor = (category: string) => {
+      switch (category) {
+        case "physical": return "from-rose-100 to-pink-100 border-rose-200";
+        case "mental": return "from-blue-100 to-indigo-100 border-blue-200";
+        case "habits": return "from-purple-100 to-violet-100 border-purple-200";
+        case "environment": return "from-green-100 to-emerald-100 border-green-200";
+        default: return "from-amber-100 to-orange-100 border-amber-200";
+      }
+    };
+
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
+      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
         <div className="container mx-auto px-4 py-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <Badge variant="outline">
-                  Question {currentQuestionIndex + 1} of {questions.length}
-                </Badge>
-                <Badge variant="outline" className="capitalize">
-                  {currentQuestion.category}
-                </Badge>
+          <div className="max-w-4xl mx-auto">
+            {/* Header with enhanced styling */}
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className={`p-3 rounded-full bg-gradient-to-r ${getCategoryColor(currentQuestion.category)} backdrop-blur-sm`}>
+                  {getCategoryIcon(currentQuestion.category)}
+                </div>
+                <div>
+                  <Badge variant="outline" className="mb-2 capitalize bg-white/70 backdrop-blur-sm">
+                    {currentQuestion.category} traits
+                  </Badge>
+                  <div className="text-sm text-muted-foreground">
+                    Question {currentQuestionIndex + 1} of {questions.length}
+                  </div>
+                </div>
               </div>
-              <Progress value={progress} className="mb-4" />
+
+              <div className="mb-6">
+                <div className="w-full bg-white/30 rounded-full h-3 backdrop-blur-sm border border-white/50">
+                  <div
+                    className="bg-gradient-to-r from-primary to-primary/80 h-3 rounded-full transition-all duration-500 ease-out shadow-lg"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+                <div className="text-xs text-muted-foreground mt-2">
+                  {Math.round(progress)}% Complete
+                </div>
+              </div>
             </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl">
-                  {currentQuestion.question}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <RadioGroup
-                  value={selectedAnswer}
-                  onValueChange={(value) => handleAnswerChange(currentQuestion.id, value)}
-                >
-                  {currentQuestion.answers.map((answer, index) => (
-                    <div key={index} className="flex items-center space-x-2 p-4 rounded-lg border hover:bg-muted/50 transition-colors">
-                      <RadioGroupItem value={index.toString()} id={`answer-${index}`} />
-                      <Label htmlFor={`answer-${index}`} className="flex-1 cursor-pointer">
-                        {answer.text}
-                      </Label>
-                    </div>
-                  ))}
-                </RadioGroup>
+            {/* Question Card with unique design */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-white/20 rounded-3xl blur-xl" />
+              <Card className="relative bg-white/70 backdrop-blur-lg border-0 shadow-2xl rounded-3xl overflow-hidden">
+                <div className={`h-2 bg-gradient-to-r ${getCategoryColor(currentQuestion.category).replace('100', '400').replace('border-', '')}`} />
 
-                <div className="flex justify-between mt-8">
-                  <Button
-                    variant="outline"
-                    onClick={handlePrevious}
-                    disabled={currentQuestionIndex === 0}
-                  >
-                    Previous
-                  </Button>
-                  <Button
-                    onClick={handleNext}
-                    disabled={!selectedAnswer}
-                  >
-                    {currentQuestionIndex === questions.length - 1 ? "Get Results" : "Next"}
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                <CardHeader className="pb-8 pt-8">
+                  <CardTitle className="text-2xl md:text-3xl font-bold text-center leading-relaxed">
+                    {currentQuestion.question}
+                  </CardTitle>
+                </CardHeader>
+
+                <CardContent className="px-8 pb-12">
+                  {/* Custom card-based answers */}
+                  <div className="grid gap-4 mb-8">
+                    {currentQuestion.answers.map((answer, index) => {
+                      const isSelected = selectedAnswer === index.toString();
+                      const doshaColors = {
+                        vata: "from-blue-50 to-cyan-50 border-blue-200 hover:border-blue-300",
+                        pitta: "from-red-50 to-orange-50 border-red-200 hover:border-red-300",
+                        kapha: "from-green-50 to-emerald-50 border-green-200 hover:border-green-300"
+                      };
+
+                      return (
+                        <div
+                          key={index}
+                          onClick={() => handleAnswerChange(currentQuestion.id, index.toString())}
+                          className={`
+                            relative p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg
+                            bg-gradient-to-r ${doshaColors[answer.dosha]}
+                            ${isSelected
+                              ? 'ring-4 ring-primary/30 border-primary shadow-xl scale-[1.02]'
+                              : 'hover:shadow-md'
+                            }
+                          `}
+                        >
+                          <div className="flex items-start gap-4">
+                            <div className={`
+                              w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200
+                              ${isSelected
+                                ? 'border-primary bg-primary'
+                                : 'border-gray-300 bg-white'
+                              }
+                            `}>
+                              {isSelected && (
+                                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                              )}
+                            </div>
+
+                            <div className="flex-1">
+                              <p className="text-lg font-medium leading-relaxed text-gray-800">
+                                {answer.text}
+                              </p>
+                              <div className="mt-2 flex items-center gap-2">
+                                <Badge
+                                  variant="outline"
+                                  className={`text-xs ${
+                                    answer.dosha === 'vata' ? 'text-blue-600 border-blue-200' :
+                                    answer.dosha === 'pitta' ? 'text-red-600 border-red-200' :
+                                    'text-green-600 border-green-200'
+                                  }`}
+                                >
+                                  {answer.dosha}
+                                </Badge>
+                              </div>
+                            </div>
+                          </div>
+
+                          {isSelected && (
+                            <div className="absolute top-4 right-4">
+                              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                </svg>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Enhanced navigation */}
+                  <div className="flex justify-between items-center">
+                    <Button
+                      variant="outline"
+                      onClick={handlePrevious}
+                      disabled={currentQuestionIndex === 0}
+                      className="px-8 py-3 rounded-xl bg-white/50 hover:bg-white/80 backdrop-blur-sm"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      Previous
+                    </Button>
+
+                    <div className="text-center">
+                      <div className="text-sm text-muted-foreground mb-1">
+                        {currentQuestionIndex + 1} / {questions.length}
+                      </div>
+                      <div className="flex gap-1">
+                        {Array.from({ length: questions.length }).map((_, i) => (
+                          <div
+                            key={i}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                              i <= currentQuestionIndex ? 'bg-primary' : 'bg-gray-200'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <Button
+                      onClick={handleNext}
+                      disabled={!selectedAnswer}
+                      className="px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg"
+                    >
+                      {currentQuestionIndex === questions.length - 1 ? "Get Results" : "Next"}
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
