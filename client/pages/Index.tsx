@@ -319,13 +319,13 @@ export default function Index() {
                 </CardContent>
               </Card>
 
-              <Card className="border-green-200 hover:border-green-300 transition-colors">
+              <Card className="border-teal-200 hover:border-teal-300 transition-colors bg-gradient-to-br from-teal-50 to-blue-50">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-green-100 rounded-lg">
-                      <Leaf className="w-6 h-6 text-green-600" />
+                    <div className="p-2 bg-teal-100 rounded-lg">
+                      <Leaf className="w-6 h-6 text-teal-600" />
                     </div>
-                    <CardTitle className="text-green-600">Kapha</CardTitle>
+                    <CardTitle className="text-teal-600">Kapha</CardTitle>
                   </div>
                   <CardDescription>Earth & Water</CardDescription>
                 </CardHeader>
