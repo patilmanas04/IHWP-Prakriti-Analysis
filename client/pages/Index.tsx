@@ -607,19 +607,19 @@ export default function Index() {
                   
                   <div className="grid md:grid-cols-3 gap-4 mb-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-600 mb-1">
+                      <div className="text-3xl font-bold text-sky-600 mb-1">
                         {results.percentage.vata}%
                       </div>
                       <div className="text-sm text-muted-foreground">Vata</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-red-600 mb-1">
+                      <div className="text-3xl font-bold text-indigo-600 mb-1">
                         {results.percentage.pitta}%
                       </div>
                       <div className="text-sm text-muted-foreground">Pitta</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-green-600 mb-1">
+                      <div className="text-3xl font-bold text-teal-600 mb-1">
                         {results.percentage.kapha}%
                       </div>
                       <div className="text-sm text-muted-foreground">Kapha</div>
