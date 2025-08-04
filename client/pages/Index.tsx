@@ -400,28 +400,28 @@ export default function Index() {
 
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
           <div className="max-w-4xl mx-auto">
             {/* Header with enhanced styling */}
-            <div className="text-center mb-12">
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <div className={`p-3 rounded-full bg-gradient-to-r ${getCategoryColor(currentQuestion.category)} backdrop-blur-sm`}>
+            <div className="text-center mb-6 sm:mb-12">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
+                <div className={`p-2 sm:p-3 rounded-full bg-gradient-to-r ${getCategoryColor(currentQuestion.category)} backdrop-blur-sm`}>
                   {getCategoryIcon(currentQuestion.category)}
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2 capitalize bg-white/70 backdrop-blur-sm">
+                  <Badge variant="outline" className="mb-2 capitalize bg-white/70 backdrop-blur-sm text-xs sm:text-sm">
                     {currentQuestion.category} traits
                   </Badge>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs sm:text-sm text-muted-foreground">
                     Question {currentQuestionIndex + 1} of {questions.length}
                   </div>
                 </div>
               </div>
 
-              <div className="mb-6">
-                <div className="w-full bg-white/30 rounded-full h-3 backdrop-blur-sm border border-white/50">
+              <div className="mb-4 sm:mb-6 px-2">
+                <div className="w-full bg-white/30 rounded-full h-2 sm:h-3 backdrop-blur-sm border border-white/50">
                   <div
-                    className="bg-gradient-to-r from-primary to-primary/80 h-3 rounded-full transition-all duration-500 ease-out shadow-lg"
+                    className="bg-gradient-to-r from-primary to-primary/80 h-2 sm:h-3 rounded-full transition-all duration-500 ease-out shadow-lg"
                     style={{ width: `${progress}%` }}
                   />
                 </div>
@@ -432,20 +432,20 @@ export default function Index() {
             </div>
 
             {/* Question Card with unique design */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-white/20 rounded-3xl blur-xl" />
-              <Card className="relative bg-white/70 backdrop-blur-lg border-0 shadow-2xl rounded-3xl overflow-hidden">
-                <div className={`h-2 bg-gradient-to-r ${getCategoryColor(currentQuestion.category).replace('100', '400').replace('border-', '')}`} />
+            <div className="relative px-2 sm:px-0">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-white/20 rounded-2xl sm:rounded-3xl blur-xl" />
+              <Card className="relative bg-white/70 backdrop-blur-lg border-0 shadow-2xl rounded-2xl sm:rounded-3xl overflow-hidden">
+                <div className={`h-1 sm:h-2 bg-gradient-to-r ${getCategoryColor(currentQuestion.category).replace('100', '400').replace('border-', '')}`} />
 
-                <CardHeader className="pb-8 pt-8">
-                  <CardTitle className="text-2xl md:text-3xl font-bold text-center leading-relaxed">
+                <CardHeader className="pb-4 sm:pb-8 pt-4 sm:pt-8 px-4 sm:px-6">
+                  <CardTitle className="text-lg sm:text-2xl md:text-3xl font-bold text-center leading-relaxed">
                     {currentQuestion.question}
                   </CardTitle>
                 </CardHeader>
 
-                <CardContent className="px-8 pb-12">
+                <CardContent className="px-4 sm:px-8 pb-6 sm:pb-12">
                   {/* Custom card-based answers */}
-                  <div className="grid gap-4 mb-8">
+                  <div className="grid gap-3 sm:gap-4 mb-6 sm:mb-8">
                     {currentQuestion.answers.map((answer, index) => {
                       const isSelected = selectedAnswer === index.toString();
                       const doshaColors = {
@@ -459,29 +459,29 @@ export default function Index() {
                           key={index}
                           onClick={() => handleAnswerChange(currentQuestion.id, index.toString())}
                           className={`
-                            relative p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg
+                            relative p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 cursor-pointer transition-all duration-300 transform hover:scale-[1.01] sm:hover:scale-[1.02] hover:shadow-lg
                             bg-gradient-to-r ${doshaColors[answer.dosha]}
                             ${isSelected
-                              ? 'ring-4 ring-primary/30 border-primary shadow-xl scale-[1.02]'
+                              ? 'ring-2 sm:ring-4 ring-primary/30 border-primary shadow-xl scale-[1.01] sm:scale-[1.02]'
                               : 'hover:shadow-md'
                             }
                           `}
                         >
-                          <div className="flex items-start gap-4">
+                          <div className="flex items-start gap-3 sm:gap-4">
                             <div className={`
-                              w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200
+                              w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 flex-shrink-0
                               ${isSelected
                                 ? 'border-primary bg-primary'
                                 : 'border-gray-300 bg-white'
                               }
                             `}>
                               {isSelected && (
-                                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-pulse" />
                               )}
                             </div>
 
-                            <div className="flex-1">
-                              <p className="text-lg font-medium leading-relaxed text-gray-800">
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm sm:text-lg font-medium leading-relaxed text-gray-800">
                                 {answer.text}
                               </p>
                               <div className="mt-2 flex items-center gap-2">
@@ -500,9 +500,9 @@ export default function Index() {
                           </div>
 
                           {isSelected && (
-                            <div className="absolute top-4 right-4">
-                              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
+                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                 </svg>
                               </div>
@@ -513,29 +513,30 @@ export default function Index() {
                     })}
                   </div>
 
-                  {/* Enhanced navigation */}
-                  <div className="flex justify-between items-center">
+                  {/* Enhanced navigation - responsive */}
+                  <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
                     <Button
                       variant="outline"
                       onClick={handlePrevious}
                       disabled={currentQuestionIndex === 0}
-                      className="px-8 py-3 rounded-xl bg-white/50 hover:bg-white/80 backdrop-blur-sm"
+                      className="w-full sm:w-auto px-4 sm:px-8 py-2 sm:py-3 rounded-xl bg-white/50 hover:bg-white/80 backdrop-blur-sm order-2 sm:order-1"
                     >
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                       </svg>
-                      Previous
+                      <span className="hidden sm:inline">Previous</span>
+                      <span className="sm:hidden">Back</span>
                     </Button>
 
-                    <div className="text-center">
-                      <div className="text-sm text-muted-foreground mb-1">
+                    <div className="text-center order-1 sm:order-2">
+                      <div className="text-xs sm:text-sm text-muted-foreground mb-1">
                         {currentQuestionIndex + 1} / {questions.length}
                       </div>
-                      <div className="flex gap-1">
+                      <div className="flex gap-1 justify-center">
                         {Array.from({ length: questions.length }).map((_, i) => (
                           <div
                             key={i}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                               i <= currentQuestionIndex ? 'bg-primary' : 'bg-gray-200'
                             }`}
                           />
@@ -546,10 +547,15 @@ export default function Index() {
                     <Button
                       onClick={handleNext}
                       disabled={!selectedAnswer}
-                      className="px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg"
+                      className="w-full sm:w-auto px-4 sm:px-8 py-2 sm:py-3 rounded-xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg order-3"
                     >
-                      {currentQuestionIndex === questions.length - 1 ? "Get Results" : "Next"}
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="hidden sm:inline">
+                        {currentQuestionIndex === questions.length - 1 ? "Get Results" : "Next"}
+                      </span>
+                      <span className="sm:hidden">
+                        {currentQuestionIndex === questions.length - 1 ? "Results" : "Next"}
+                      </span>
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Button>
