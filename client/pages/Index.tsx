@@ -364,7 +364,7 @@ export default function Index() {
             <Button onClick={handleStartQuiz} size="lg" className="px-8 py-3 text-lg">
               Start Your Assessment
             </Button>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-sm text-muted-foreground mt-4 mb-12">
               10 questions • Takes about 5 minutes
             </p>
           </div>
