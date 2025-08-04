@@ -399,7 +399,7 @@ export default function Index() {
     };
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50">
         <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
           <div className="max-w-4xl mx-auto">
             {/* Header with enhanced styling */}
