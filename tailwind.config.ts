@@ -57,6 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        vata: "hsl(var(--vata))",
+        pitta: "hsl(var(--pitta))",
+        kapha: "hsl(var(--kapha))",
       },
       borderRadius: {
         lg: "var(--radius)",
