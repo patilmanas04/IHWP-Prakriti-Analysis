@@ -449,9 +449,9 @@ export default function Index() {
                     {currentQuestion.answers.map((answer, index) => {
                       const isSelected = selectedAnswer === index.toString();
                       const doshaColors = {
-                        vata: "from-blue-50 to-cyan-50 border-blue-200 hover:border-blue-300",
-                        pitta: "from-red-50 to-orange-50 border-red-200 hover:border-red-300",
-                        kapha: "from-green-50 to-emerald-50 border-green-200 hover:border-green-300"
+                        vata: "from-sky-50 to-blue-50 border-sky-200 hover:border-sky-300",
+                        pitta: "from-indigo-50 to-purple-50 border-indigo-200 hover:border-indigo-300",
+                        kapha: "from-teal-50 to-cyan-50 border-teal-200 hover:border-teal-300"
                       };
 
                       return (
