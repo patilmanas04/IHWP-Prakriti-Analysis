@@ -9,38 +9,38 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 45 25% 97%;
-    --foreground: 15 25% 15%;
+    --background: 210 20% 97%;
+    --foreground: 215 25% 15%;
 
-    --card: 45 25% 99%;
-    --card-foreground: 15 25% 15%;
+    --card: 210 20% 99%;
+    --card-foreground: 215 25% 15%;
 
-    --popover: 45 25% 99%;
-    --popover-foreground: 15 25% 15%;
+    --popover: 210 20% 99%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 25 60% 45%;
-    --primary-foreground: 45 25% 97%;
+    --primary: 215 85% 55%;
+    --primary-foreground: 210 20% 97%;
 
-    --secondary: 35 30% 90%;
-    --secondary-foreground: 15 25% 25%;
+    --secondary: 210 30% 90%;
+    --secondary-foreground: 215 25% 25%;
 
-    --muted: 35 20% 92%;
-    --muted-foreground: 15 15% 55%;
+    --muted: 210 20% 92%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 120 25% 85%;
-    --accent-foreground: 15 25% 25%;
+    --accent: 200 25% 85%;
+    --accent-foreground: 215 25% 25%;
 
     --destructive: 0 65% 55%;
-    --destructive-foreground: 45 25% 97%;
+    --destructive-foreground: 210 20% 97%;
 
-    --border: 35 15% 85%;
-    --input: 35 15% 88%;
-    --ring: 25 60% 45%;
+    --border: 210 15% 85%;
+    --input: 210 15% 88%;
+    --ring: 215 85% 55%;
 
-    /* Ayurvedic dosha colors */
-    --vata: 220 45% 65%;
-    --pitta: 15 75% 55%;
-    --kapha: 120 35% 45%;
+    /* Ayurvedic dosha colors - blue themed */
+    --vata: 200 70% 65%;
+    --pitta: 240 75% 65%;
+    --kapha: 180 60% 55%;
 
     --radius: 0.5rem;
 
@@ -62,38 +62,38 @@
   }
 
   .dark {
-    --background: 15 25% 8%;
-    --foreground: 45 25% 92%;
+    --background: 215 25% 8%;
+    --foreground: 210 20% 92%;
 
-    --card: 15 25% 10%;
-    --card-foreground: 45 25% 92%;
+    --card: 215 25% 10%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 15 25% 10%;
-    --popover-foreground: 45 25% 92%;
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 20% 92%;
 
-    --primary: 25 60% 55%;
-    --primary-foreground: 15 25% 8%;
+    --primary: 215 85% 65%;
+    --primary-foreground: 215 25% 8%;
 
-    --secondary: 15 15% 18%;
-    --secondary-foreground: 45 25% 92%;
+    --secondary: 215 15% 18%;
+    --secondary-foreground: 210 20% 92%;
 
-    --muted: 15 15% 15%;
-    --muted-foreground: 45 15% 65%;
+    --muted: 215 15% 15%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 120 25% 25%;
-    --accent-foreground: 45 25% 92%;
+    --accent: 200 25% 25%;
+    --accent-foreground: 210 20% 92%;
 
     --destructive: 0 65% 45%;
-    --destructive-foreground: 45 25% 92%;
+    --destructive-foreground: 210 20% 92%;
 
-    --border: 15 15% 22%;
-    --input: 15 15% 20%;
-    --ring: 25 60% 55%;
+    --border: 215 15% 22%;
+    --input: 215 15% 20%;
+    --ring: 215 85% 65%;
 
-    /* Ayurvedic dosha colors - dark mode */
-    --vata: 220 40% 75%;
-    --pitta: 15 70% 65%;
-    --kapha: 120 30% 55%;
+    /* Ayurvedic dosha colors - dark mode blue themed */
+    --vata: 200 60% 75%;
+    --pitta: 240 65% 75%;
+    --kapha: 180 50% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
