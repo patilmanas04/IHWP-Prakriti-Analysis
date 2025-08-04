@@ -264,15 +264,23 @@ export default function Index() {
             <div className="mb-8">
               <div className="flex justify-center mb-4">
                 <div className="p-4 bg-primary/10 rounded-full">
-                  <Leaf className="w-12 h-12 text-primary" />
+                  <div className="w-12 h-12 text-primary flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12">
+                      <path d="M12 2C12 2 17 5 17 11C17 13.5 15 16 12 16C9 16 7 13.5 7 11C7 5 12 2 12 2Z" />
+                      <path d="M12 16C12 16 14 18 14 20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20C10 18 12 16 12 16Z" />
+                      <circle cx="8" cy="9" r="1.5" opacity="0.7" />
+                      <circle cx="16" cy="9" r="1.5" opacity="0.7" />
+                      <path d="M8 14C8 14 9.5 15 12 15C14.5 15 16 14 16 14" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Discover Your Ayurvedic Constitution
+                Ayur<span className="text-primary">Balance</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Uncover your unique Prakriti (body constitution) through ancient Ayurvedic wisdom. 
-                Learn whether you're primarily Vata, Pitta, or Kapha and get personalized lifestyle recommendations.
+                Transform your wellness journey with personalized Ayurvedic insights.
+                Discover your unique dosha blueprint and unlock a life of natural balance and vitality.
               </p>
             </div>
 
