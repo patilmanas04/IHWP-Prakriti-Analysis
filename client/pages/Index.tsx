@@ -302,13 +302,13 @@ export default function Index() {
                 </CardContent>
               </Card>
 
-              <Card className="border-red-200 hover:border-red-300 transition-colors">
+              <Card className="border-indigo-200 hover:border-indigo-300 transition-colors bg-gradient-to-br from-indigo-50 to-blue-50">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-red-100 rounded-lg">
-                      <Sun className="w-6 h-6 text-red-600" />
+                    <div className="p-2 bg-indigo-100 rounded-lg">
+                      <Sun className="w-6 h-6 text-indigo-600" />
                     </div>
-                    <CardTitle className="text-red-600">Pitta</CardTitle>
+                    <CardTitle className="text-indigo-600">Pitta</CardTitle>
                   </div>
                   <CardDescription>Fire & Water</CardDescription>
                 </CardHeader>
